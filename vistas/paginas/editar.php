@@ -13,7 +13,7 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
             <h1>Actualizar</h1>
                 <div class="form-group">
                     <i class="fas fa-user"></i>
-                    <label  class="letra2" for="nombre"><strong>Nombre Completo</strong></label>
+                    <label  class="letra2" for="nombre"><strong>Nombre</strong></label>
                     <div class="input-group">
                             <input type="text" class="form-control" id="nombre" name="actualizarNombre">
                     </div>
