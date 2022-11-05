@@ -11,61 +11,59 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="container-fluid barra">
-            <div class="container">
-                <ul class="nav nav-justified py-2 nav-pills">
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo nav-link">CRUD</a>
+                <ul class="nav-menu">
                 <?php if(isset($_GET["paginas"])): ?>
                 <?php if($_GET["paginas"] == "ingreso"): ?>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index.php?paginas=ingreso">Ingreso</a>
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" href="index.php?paginas=ingreso">Ingreso</a>
                     </li>
                 <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?paginas=ingreso">Ingreso</a>
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" href="index.php?paginas=ingreso">Ingreso</a>
                     </li>
                 <?php endif ?>
                 <?php if($_GET["paginas"] == "inicio"): ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?paginas=inicio">Inicio</a>
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" href="index.php?paginas=inicio">Inicio</a>
                     </li>
                 <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?paginas=inicio">Inicio</a>
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" href="index.php?paginas=inicio">Inicio</a>
                     </li>
                 <?php endif ?>
                 <?php if($_GET["paginas"] == "salir"): ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?paginas=salir">Salir</a>
+                    <li class="nav-item-item">
+                        <a class="nav-menu-link nav-link" href="index.php?paginas=salir">Salir</a>
                     </li>
                 <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?paginas=salir">Salir</a>
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" href="index.php?paginas=salir">Salir</a>
                     </li>
                     <?php endif ?>
                 <?php else: ?>
-                    <div class="container-fluid">
-                        <div class="container-fluid barra">
-                            <div class="container">
-                                <ul class="nav nav-justified py-2 nav-pills">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="index.php?paginas=ingreso">Ingreso</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="index.php?paginas=inicio">Inicio</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="index.php?paginas=salir">Salir</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <header class="header">
+                        <nav class="nav">
+                            <a href="#" class="logo nav-link">LOGO</a>
+                            <ul class="nav-menu">
+                                <li class="nav-menu-item">
+                                    <a href="index.php?paginas=ingreso" class="nav-menu-link nav-link">Ingreso</a>
+                                </li>
+                                <li class="nav-menu-item">
+                                    <a href="index.php?paginas=inicio" class="nav-menu-link nav-link">Inicio</a>
+                                </li>
+                                <li class="nav-menu-item">
+                                    <a href="index.php?paginas=salir" class="nav-menu-link nav-link">Salir</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </header>
                 <?php endif ?>
             </ul>
-            </div>
-        </div>
-    </div>
+        </nav>
+    </header>
     <div class="container-fluid">
         <div class="container py-5">
                 <?php

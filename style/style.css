@@ -4,6 +4,47 @@
     padding: 0;
     box-sizing: border-box;
 }
+.header {
+    background-color: hsl(200, 54%,12%);
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    border-bottom: 1px solid var(--lead);
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link{
+    color:white;
+    text-decoration: none;
+}
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+}
+
+.nav-menu{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+
+/*------------------------------------------resto de paginas------------------------------------------------*/
+
+
 :root{
     --green :hsl(162, 45%, 56%);
     --lead: hsl(162, 2%, 56%);
@@ -25,6 +66,7 @@ body{
     font-size: 16px;
     line-height: 1.5;
     overflow-x: hidden;
+    padding: 90px 20px 0;
 }
 body::after,
 body::before{
@@ -70,6 +112,7 @@ a {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin-top: -10%;
 }
 
 .form-content{
