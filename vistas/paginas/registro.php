@@ -1,43 +1,24 @@
-<link rel="stylesheet" href="style/style.css">
-<br>
-<br>
-
-<div class="fondo_registro">
-<div class="container text-center">
-            <form class="p-5 bg-11ght" method="post">
-                <div class="form-group">
-                    <i class="fas fa-user"></i>
-                    <label  class="letra2" for="nombre"><strong>Nombre Completo:</strong></label>
-                    <div class="input-group">
-                            <input type="text" class="form-control" id="nombre" name="registroNombre">
-                    </div>
+<section class="form-main"> 
+    <div class="form-content">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+        <div class="box">
+            <h3>Bienvenido</h3>
+            <form action="" method="post">
+                <div class="input-box">
+                    <input type="text" class="input-control" id="nombre" name="registroNombre" placeholder="Nombre">
                 </div>
-                <br>
-                <div class="form-group">
-                    <i class="fas fa-user"></i>
-                    <label  class="letra2" for="nombre"><strong>Telefono</strong></label>
-                    <div class="input-group">
-                            <input type="text" class="form-control" id="telefono" name="registroTelefono">
-                    </div>
+                <div class="input-box">
+                    <input type="text" class="input-control" id="telefono" name="registroTelefono" placeholder="Telefono">
                 </div>
-                <br>
-                <div class="form-group">
-                    <i class="fa-solid fa-envelope"></i>
-                    <label  class="letra2" for="email"><strong>Correo Electrónico:</strong></label>
-                    <div class="input-group">
-                            <input type="email" class="form-control" id="email" name="registroEmail">
-                    </div>
+                <div class="input-box">
+                    <input type="email" class="input-control" id="email" name="registroEmail" placeholder="Email">
                 </div>
-                <br>
-                <div class="form-group">
-                    <i class="fa-solid fa-key"></i>
-                    <label  class="letra2" for="pwd"><strong>Contraseña:</strong></label>
-                    <div class="input-group">
-                            <input type="password" class="form-control" id="pwd" name="registroPassword">
-                    </div>
+                <div class="input-box">
+                    <input type="text" class="input-control" id="pwd" name="registroPassword" placeholder="Contraseña">
                 </div>
-                </br>
-                <button type="submit" class="btn btn-primary boton barra letra2">Enviar</button>
+                <button type="submit" class="btn">Guardar</button>
                 <br>
                 <?php 
                     
@@ -57,5 +38,7 @@
                     }
                 ?>
             </form>
-</div>
-</div>
+        </div>
+    </div>
+</section> 
+
