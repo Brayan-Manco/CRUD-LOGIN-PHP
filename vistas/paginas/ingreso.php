@@ -1,5 +1,4 @@
 
-<link rel="stylesheet" href="style/style.css">
 <div class="fondo_ingreso">
 <div class="d-flex justify-content-center text-center ">
 <form lass="p-3 bg-black" method="post">

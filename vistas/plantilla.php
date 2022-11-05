@@ -9,13 +9,6 @@
     <script src="https://kit.fontawesome.com/40fa66ad6f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/style.css">
     <title>Document</title>
-    <style>
-        body
-        {
-            background: url(imagenes/fondo.jpg);
-            background-size: cover;
-        }
-    </style>
 </head>
 <body>
     <br>
