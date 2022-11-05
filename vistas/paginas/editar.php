@@ -46,7 +46,6 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
                 <?php 
                     
                     $registro = controladorRegistro::ctrActualizarRegistro();
-
                     if($registro=="ok"){
                         echo '<script>
 

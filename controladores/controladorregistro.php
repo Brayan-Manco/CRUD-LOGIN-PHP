@@ -26,8 +26,23 @@ class controladorRegistro{
         return $respuesta;
     }
 
+    static public function ctrActualizarRegistro(){
+        if(isset($_POST["actualizarNombre"]))
+        {
+            $tabla = "registros";
+            $datos = array("nombre"=> $_POST["actualizarNombre"],
+            "telefono"=> $_POST["actualizarTelefono"],
+            "correo"=> $_POST["actualizarEmail"],
+            "password"=> $_POST["actualizarPassword"]);
+
+            $respuesta = ModeloFormulario::mdloActualizarRegistro($tabla,$datos);
+
+            return $respuesta;
+            
+        }
+    }
     
-    public function ctrIngreso ()
+    static public function ctrIngreso ()
     {
         if(isset($_POST["ingreseCorreo"]))
         {
@@ -64,22 +79,6 @@ class controladorRegistro{
 
                         echo '<div class="alert alert-danger"> El usuario no existe </div>';
             }
-        }
-    }
-
-    public function ctrActualizarRegistro(){
-        if(isset($_POST["actualizarNombre"]))
-        {
-            $tabla = "registros";
-            $datos = array("nombre"=> $_POST["actualizarNombre"],
-            "telefono"=> $_POST["actualizarTelefono"],
-            "correo"=> $_POST["actualizarEmail"],
-            "password"=> $_POST["actualizarPassword"]);
-
-            $respuesta = ModeloFormulario::mdloActualizarRegistro($tabla,$datos);
-
-            return $respuesta;
-            
         }
     }
 }
