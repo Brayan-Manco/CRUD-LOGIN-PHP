@@ -193,4 +193,17 @@ a {
     text-align: center;
 }
 
-
+@media(max-width:575px){
+    body::after,
+    body::before{
+        height: 250px;
+        width: 250px;
+        filter: blur(100px);
+    }
+    .form-content .box {
+        padding: 30px;
+    }
+    .form-content h3{
+        font-size: 24px;
+    }
+}
