@@ -8,10 +8,10 @@
             <h3>Bienvenido</h3>
             <form action="" method="post">
                 <div class="input-box">
-                    <input type="email" class="input-control" id="email" name="ingreseCorreo" placeholder="Email">
+                    <input type="email" class="input-control" id="Correo" name="ICorreo" placeholder="Email">
                 </div>
                 <div class="input-box">
-                    <input type="password" class="input-control" id="password" name="ingresepassword" placeholder="Contraseña">
+                    <input type="password" class="input-control" id="Password" name="IPassword" placeholder="Contraseña">
                 </div>
                 <button type="submit" class="btn">Ingresar</button>
                 <?php

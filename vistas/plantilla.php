@@ -64,8 +64,6 @@
             </ul>
         </nav>
     </header>
-    <div class="container-fluid">
-        <div class="container py-5">
                 <?php
                 if(isset($_GET["paginas"]))
                 {
@@ -73,6 +71,7 @@
                     $_GET["paginas"] == "ingreso" ||
                     $_GET["paginas"] == "editar" ||
                     $_GET["paginas"] == "inicio" ||
+                    $_GET["paginas"] == "borrar" ||
                     $_GET["paginas"] == "salir" )
                     {
                         include "paginas/".$_GET["paginas"].".php";
@@ -87,7 +86,5 @@
                     include "paginas/ingreso.php";
                 }
                 ?>
-        </div>
-    </div>
 </body>
 </html>

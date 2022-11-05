@@ -2,50 +2,32 @@
 $usuario = controladorRegistro::ctrselecionarRegistro();
 //echo '<pre>'; print_r($usuario); echo '</pre>'
 ?>
-
-<link rel="stylesheet" href="style/style.css">
-<br>
-<br>
-
-<div class="fondo_registro">
-<div class="container text-center">
-            <form class="p-5 bg-11ght" method="post">
-            <h1>Actualizar</h1>
-                <div class="form-group">
-                    <i class="fas fa-user"></i>
-                    <label  class="letra2" for="nombre"><strong>Nombre</strong></label>
-                    <div class="input-group">
-                            <input type="text" class="form-control" id="nombre" name="actualizarNombre">
-                    </div>
+<section class="form-main"> 
+    <div class="form-content">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+        <div class="box">
+            <h3>Editar</h3>
+            <form action="" method="post">
+                <div class="input-box">
+                    <input type="text" class="input-control" id="nombre" name="ANombre" placeholder="Nombre">
                 </div>
+                <div class="input-box">
+                    <input type="text" class="input-control" id="telefono" name="ATelefono" placeholder="Telefono">
+                </div>
+                <div class="input-box">
+                    <input type="email" class="input-control" id="email" name="ACorreo" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-control" id="pwd" name="APassword" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn">Actualizar</button>
                 <br>
-                <div class="form-group">
-                    <i class="fas fa-user"></i>
-                    <label  class="letra2" for="nombre"><strong>Telefono</strong></label>
-                    <div class="input-group">-
-                            <input type="text" class="form-control" id="telefono" name="actualizarTelefono">
-                    </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <i class="fa-solid fa-envelope"></i>
-                    <label  class="letra2" for="email"><strong>Correo Electrónico</strong></label>
-                    <div class="input-group">
-                            <input type="email" class="form-control" id="email" name="actualizarEmail">
-                    </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <i class="fa-solid fa-key"></i>
-                    <label  class="letra2" for="pwd"><strong>Contraseña</strong></label>
-                    <div class="input-group">
-                            <input type="text" class="form-control" id="pwd" name="actualizarPassword">
-                    </div>
-                </div>
-                </br>
                 <?php 
                     
-                    $registro = controladorRegistro::ctrActualizarRegistro();
+                    $registro = controladorRegistro::ctrEditarRegistro();
+
                     if($registro=="ok"){
                         echo '<script>
 
@@ -56,11 +38,10 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
                         }
                         </script>';
 
-                        echo '<div class="alert alert-success">El usuario ha sido actualizado correctamente</div>';
+                        echo '<div class="alert alert-success"> El usuario ha sido actualizado </div>';
                     }
                 ?>
-                </br>
-                <button type="submit" class="btn btn-primary boton barra letra2">Enviar</button>
             </form>
-</div>
-</div>
+        </div>
+    </div>
+</section> 

@@ -19,7 +19,7 @@ class ModeloFormulario{
         $stmt =null; 
     }
 
-    static public function mdloActualizarRegistro($tabla, $datos){
+    static public function mdloEditarRegistro($tabla, $datos){
 
         $stmt= Conexion::conectar()->prepare("UPDATE $tabla nombre='[$value-2]', telefono ='[$value-3]', correo='[$value-4]', password='[$value-5]' WHERE $tabla.'id' = 'id';");
         
@@ -88,4 +88,15 @@ class ModeloFormulario{
         //$stmt->close();
         $stmt = null;*/
     }
+    static public function mdlBorrarRegistro($item, $valor){
+
+        if ($item== null && $valor ==null){
+
+            $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla  WHERE $item = id");
+
+            $stmt->execute();
+
+            $stmt= null;
+        }
+	}
 }

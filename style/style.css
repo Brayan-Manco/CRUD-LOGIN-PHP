@@ -40,11 +40,7 @@
     text-transform: uppercase;
     width: max-content;
 }
-
-
 /*------------------------------------------resto de paginas------------------------------------------------*/
-
-
 :root{
     --green :hsl(162, 45%, 56%);
     --lead: hsl(162, 2%, 56%);
