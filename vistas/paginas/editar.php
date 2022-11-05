@@ -57,7 +57,7 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
                         }
                         </script>';
 
-                        echo '<div class="alert alert-success"> El usuario ha sido actualizado </div>';
+                        echo '<div class="alert alert-success">El usuario ha sido actualizado correctamente</div>';
                     }
                 ?>
                 </br>
