@@ -11,16 +11,16 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
             <h3>Editar</h3>
             <form action="" method="post">
                 <div class="input-box">
-                    <input type="text" class="input-control" id="nombre" name="ANombre" placeholder="Nombre">
+                    <input type="text" class="input-control" id="nombre" name="ENombre" placeholder="Nombre">
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-control" id="telefono" name="ATelefono" placeholder="Telefono">
+                    <input type="text" class="input-control" id="telefono" name="ETelefono" placeholder="Telefono">
                 </div>
                 <div class="input-box">
-                    <input type="email" class="input-control" id="email" name="ACorreo" placeholder="Email">
+                    <input type="email" class="input-control" id="email" name="ECorreo" placeholder="Email">
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-control" id="pwd" name="APassword" placeholder="Contraseña">
+                    <input type="text" class="input-control" id="pwd" name="EPassword" placeholder="Contraseña">
                 </div>
                 <button type="submit" class="btn">Actualizar</button>
                 <br>

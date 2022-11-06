@@ -3,7 +3,7 @@
 class controladorRegistro{
     static public function ctrtrarRegistro ()
     {
-        if(isset($_POST["Nombre"]))
+        if(isset($_POST["RNombre"]))
         {
             $tabla = "registros";
             $datos = array("nombre"=> $_POST["RNombre"],
@@ -29,13 +29,14 @@ class controladorRegistro{
     static public function ctrEditarRegistro(){
         if(isset($_POST["ENombre"]))
         {
+            $id="id";
             $tabla = "registros";
             $datos = array("nombre"=> $_POST["ENombre"],
             "telefono"=> $_POST["ETelefono"],
-            "correo"=> $_POST["Ecorreo"],
+            "correo"=> $_POST["ECorreo"],
             "password"=> $_POST["EPassword"]);
 
-            $respuesta = ModeloFormulario::mdloEditarRegistro($tabla,$datos);
+            $respuesta = ModeloFormulario::mdloEditarRegistro($tabla,$datos,$id);
 
             return $respuesta;
             
@@ -81,9 +82,14 @@ class controladorRegistro{
             }
         }
     }
-    static public function ctrBorrarRegistro(){
-        $tabla ="registros";
-        $item = 'id';
-        $respuesta = ModeloFormulario::mdlBorrarRegistro($tabla, $item);
-	}
+    /*static public function ctrBorrarRegistro(){
+        if(isset($_GET('id'))){
+            $tabla ="registros";
+            $id = $_GET['id'];
+
+        $respuesta = ModeloFormulario::mdlBorrarRegistro($tabla,$id);
+        return $respuesta;
+        }
+        
+	}*/
 }
