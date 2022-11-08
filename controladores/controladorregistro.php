@@ -48,7 +48,15 @@ class controladorRegistro{
         $id = $_GET["id"];
 
         $respuesta = ModeloFormulario::mdlBorrarRegistro($tabla,$id);
-        return $respuesta;
+        $_SESSION ["validar_ingreso"]= "ok";
+
+                echo '<script>
+                            if (window.history.replaceState) {
+                                window.history.replaceState(null, null, window.location.href);
+                            }
+
+                            window.location="index.php?paginas=inicio";
+                            </script>';
 	}
 
     static public function ctrIngreso ()
@@ -62,7 +70,7 @@ class controladorRegistro{
 
             $respuesta = ModeloFormulario::mdlMostrarRegistro($tabla,$item, $valor);
 
-            if($respuesta ["correo"] == $_POST["ICorreo"] && $respuesta [":password"] == $_POST["IPassword"] )
+            if($respuesta ["correo"] == $_POST["ICorreo"] && $respuesta ["password"] == $_POST["IPassword"] )
             {
 
                 $_SESSION ["validar_ingreso"]= "ok";

@@ -21,8 +21,10 @@ class ModeloFormulario{
 
     static public function mdlBorrarRegistro ($tabla, $id){
 
-        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE  $tabla.id = $id");
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE  id = $id");
         $stmt->execute();
+        //$stmt->close();
+        $stmt =null; 
     }
 
     static public function mdloEditarRegistro($tabla, $datos,$id){

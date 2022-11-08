@@ -25,16 +25,8 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
                 <button type="submit" class="btn">Actualizar</button>
                 <br>
                 <?php 
-                    
-                    $registro = controladorRegistro::ctrEditarRegistro();
-                    if($registro=="ok"){
-                        echo '<script>
-                            if (window.history.replaceState) {
-                                window.history.replaceState(null, null, window.location.href);
-                            }
-                            window.location="index.php?paginas=inicio";
-                            </script>';
-                    }
+                    $editar = new controladorRegistro();
+                    $editar-> ctrEditarRegistro();
                 ?>
             </form>
         </div>
