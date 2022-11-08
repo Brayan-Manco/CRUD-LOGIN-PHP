@@ -19,10 +19,15 @@ class ModeloFormulario{
         $stmt =null; 
     }
 
+    static public function mdlBorrarRegistro ($tabla, $id){
+
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE  $tabla.id = $id");
+        $stmt->execute();
+    }
+
     static public function mdloEditarRegistro($tabla, $datos,$id){
 
-        $stmt= Conexion::conectar()->prepare("UPDATE $tabla SET nombre=?, telefono=? , correo=?, password WHERE 'id' =$id");
-        
+        $stmt= Conexion::conectar()->prepare("UPDATE $tabla SET nombre=$datos, telefono=$datos , correo=$datos, password=$datos WHERE id =$id");
         
 
         if ($stmt->execute()){
@@ -36,13 +41,6 @@ class ModeloFormulario{
     }
     static public function mdlMostrarRegistro ($tabla, $item, $valor) 
     {       
-
-        /*$stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla");
-        $stmt->execute();
-    
-            return $stmt ->fetchAll();
-            //$stmt->close();
-            $stmt = null;*/
 
         if ($item== null && $valor ==null){
 
@@ -64,33 +62,5 @@ class ModeloFormulario{
         
         //$stmt->close();
         $stmt = null;
-
-
-        /*if ($item == null && $valor == null) {
-            $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla");
-
-            $stmt->execute();
-    
-            return $stmt ->fetchAll();
-        }
-        else 
-        {
-            $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item =:$item");
-
-            $stmt->bindParam(":".$item, $valor, PDO::PARAM_STR);
-            $stmt->execute();
-    
-            return $stmt ->fetchAll();
-        }
-        //$stmt->close();
-        $stmt = null;*/
     }
-    static public function mdlBorrarRegistro($item, $tabla){
-
-        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla  WHERE $item = id");
-
-        $stmt->execute();
-
-        $stmt= null;
-	}
 }

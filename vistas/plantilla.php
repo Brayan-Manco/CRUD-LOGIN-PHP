@@ -46,7 +46,7 @@
                 <?php else: ?>
                     <header class="header">
                         <nav class="nav">
-                            <a href="#" class="logo nav-link">LOGO</a>
+                            <a href="#" class="logo nav-link">CRUD</a>
                             <ul class="nav-menu">
                                 <li class="nav-menu-item">
                                     <a href="index.php?paginas=ingreso" class="nav-menu-link nav-link">Ingreso</a>
@@ -71,7 +71,6 @@
                     $_GET["paginas"] == "ingreso" ||
                     $_GET["paginas"] == "editar" ||
                     $_GET["paginas"] == "inicio" ||
-                    $_GET["paginas"] == "borrar" ||
                     $_GET["paginas"] == "salir" )
                     {
                         include "paginas/".$_GET["paginas"].".php";

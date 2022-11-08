@@ -22,27 +22,35 @@ class controladorRegistro{
     {
         $tabla = "registros";
 
-        $respuesta = ModeloFormulario::mdlMostrarRegistro($tabla,null, null);
+        $respuesta = ModeloFormulario::mdlMostrarRegistro($tabla,null, null,null);
         return $respuesta;
     }
 
     static public function ctrEditarRegistro(){
-        if(isset($_POST["ENombre"]))
+        if(isset($_GET["id"]))
         {
-            $id="id";
+            $id=$_GET["id"]; 
             $tabla = "registros";
-            $datos = array("nombre"=> $_POST["ENombre"],
+            $datos =array("nombre"=> $_POST["ENombre"],
             "telefono"=> $_POST["ETelefono"],
-            "correo"=> $_POST["ECorreo"],
+            "correo"=>$_POST["ECorreo"],
             "password"=> $_POST["EPassword"]);
 
-            $respuesta = ModeloFormulario::mdloEditarRegistro($tabla,$datos,$id);
+            $respuesta = ModeloFormulario::mdloEditarRegistro($tabla,$datos, $id);
 
             return $respuesta;
-            
         }
     }
     
+    static public function ctrBorrarRegistro(){
+
+        $tabla = "registros";
+        $id = $_GET["id"];
+
+        $respuesta = ModeloFormulario::mdlBorrarRegistro($tabla,$id);
+        return $respuesta;
+	}
+
     static public function ctrIngreso ()
     {
         if(isset($_POST["ICorreo"]))
@@ -50,11 +58,11 @@ class controladorRegistro{
 
             $tabla ="registros";
             $item = "correo";
-            $valor =$_POST["Correo"];
+            $valor =$_POST["ICorreo"];
 
             $respuesta = ModeloFormulario::mdlMostrarRegistro($tabla,$item, $valor);
 
-            if($respuesta ["correo"]== $_POST["ICorreo"] && $respuesta ["password"] ==$_POST["IPassword"] )
+            if($respuesta ["correo"] == $_POST["ICorreo"] && $respuesta [":password"] == $_POST["IPassword"] )
             {
 
                 $_SESSION ["validar_ingreso"]= "ok";
@@ -82,14 +90,4 @@ class controladorRegistro{
             }
         }
     }
-    /*static public function ctrBorrarRegistro(){
-        if(isset($_GET('id'))){
-            $tabla ="registros";
-            $id = $_GET['id'];
-
-        $respuesta = ModeloFormulario::mdlBorrarRegistro($tabla,$id);
-        return $respuesta;
-        }
-        
-	}*/
 }

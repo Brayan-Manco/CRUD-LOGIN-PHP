@@ -9,7 +9,7 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
         <div class="circle-3"></div>
         <div class="box">
             <h3>Editar</h3>
-            <form action="" method="post">
+            <form action="" method="post, get">
                 <div class="input-box">
                     <input type="text" class="input-control" id="nombre" name="ENombre" placeholder="Nombre">
                 </div>
@@ -27,18 +27,13 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
                 <?php 
                     
                     $registro = controladorRegistro::ctrEditarRegistro();
-
                     if($registro=="ok"){
                         echo '<script>
-
-                        if (window.history.replaceState) {
-
-                            window.history.replaceState(null, null, window.location.href);
-
-                        }
-                        </script>';
-
-                        echo '<div class="alert alert-success"> El usuario ha sido actualizado </div>';
+                            if (window.history.replaceState) {
+                                window.history.replaceState(null, null, window.location.href);
+                            }
+                            window.location="index.php?paginas=inicio";
+                            </script>';
                     }
                 ?>
             </form>

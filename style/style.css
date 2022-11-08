@@ -40,6 +40,13 @@
     text-transform: uppercase;
     width: max-content;
 }
+.nav-toggle{
+    color:white;
+    background: none;
+    border:none;
+    font-size: 30px;
+    padding: 0 20px;
+}
 /*------------------------------------------resto de paginas------------------------------------------------*/
 :root{
     --green :hsl(162, 45%, 56%);
