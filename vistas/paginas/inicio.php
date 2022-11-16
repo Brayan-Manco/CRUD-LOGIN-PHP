@@ -14,7 +14,6 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
         <div class="col-md-3">
             <div class="card-body border border-secondary rounded">
               <h4 class="card-title">  <?php echo  $value["nombre"]; ?></h4>
-              <div class="card-text">ID : <?php echo  $value["id"]; ?></div>
               <div class="card-text">Telefono : <?php echo  $value["telefono"]; ?></div>
               <div class="card-text">Corre : <?php echo  $value["correo"]; ?></div>
               <div class="card-text">Contraseña : <?php echo  $value["password"]; ?></div>
@@ -22,8 +21,8 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
               <a class="btn btn-primary" href="index.php?paginas=editar&id=<?php echo $value["id"];?>">Editar</a>
               <button class="btn btn-danger">Eliminar</button>
               <?php
-                  $respuesta = new controladorRegistro();
-                  $respuesta-> mdlBorrarRegistro();
+                  //$respuesta = new controladorRegistro();
+                  //$respuesta-> ctrBorrarRegistro();
               ?>
             </div>
           </div>

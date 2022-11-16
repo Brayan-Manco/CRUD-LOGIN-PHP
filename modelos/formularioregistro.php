@@ -29,16 +29,19 @@ class ModeloFormulario{
 
     static public function mdloEditarRegistro($tabla, $datos,$id){
 
-        $stmt= Conexion::conectar()->prepare("UPDATE $tabla SET nombre=$datos, telefono=$datos , correo=$datos, password=$datos WHERE id =$id");
-        
-
+        $stmt= Conexion::conectar()->prepare("UPDATE $tabla SET nombre=:nombre,telefono=:telefono, correo=:correo, password=:password WHERE id =$id");
+    
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+        $stmt->bindParam(":correo", $datos["correo"], PDO::PARAM_STR);
+        $stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
         if ($stmt->execute()){
             return "ok";
         }else{
             print_r(Conexion::conectar()->errorInfo());
         }
         //$stmt->close();
-        $stmt =null;
+        $stmt =null; 
         
     }
     static public function mdlMostrarRegistro ($tabla, $item, $valor) 

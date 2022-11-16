@@ -25,8 +25,20 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
                 <button type="submit" class="btn">Actualizar</button>
                 <br>
                 <?php 
-                    $editar = new controladorRegistro();
-                    $editar-> ctrEditarRegistro();
+                    $editar = controladorRegistro::ctrEditarRegistro();
+
+                    if($editar=="ok"){
+                        echo '<script>
+
+                        if (window.history.replaceState) {
+
+                            window.history.replaceState(null, null, window.location.href);
+
+                        }
+                        </script>';
+
+                        echo '<div class="alert alert-success"> El usuario ha sido agregado </div>';
+                    }
                 ?>
             </form>
         </div>

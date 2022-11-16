@@ -46,17 +46,7 @@ class controladorRegistro{
 
         $tabla = "registros";
         $id = $_GET["id"];
-
         $respuesta = ModeloFormulario::mdlBorrarRegistro($tabla,$id);
-        $_SESSION ["validar_ingreso"]= "ok";
-
-                echo '<script>
-                            if (window.history.replaceState) {
-                                window.history.replaceState(null, null, window.location.href);
-                            }
-
-                            window.location="index.php?paginas=inicio";
-                            </script>';
 	}
 
     static public function ctrIngreso ()
