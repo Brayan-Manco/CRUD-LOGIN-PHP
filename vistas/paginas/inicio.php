@@ -1,6 +1,17 @@
-<?php 
-$usuario = controladorRegistro::ctrselecionarRegistro();
-//echo '<pre>'; print_r($usuario); echo '</pre>'
+<?php
+  if(!isset($_SESSION["validar_ingreso"])){
+
+  echo '<script>window.location = "index.php?paginas=ingreso";</script>';
+  return;
+  }else{
+  if($_SESSION["validar_ingreso"] != "ok" ){
+
+    echo '<script>window.location = "index.php?paginas=inicio";</script>';
+    return;
+    }
+  }
+  $usuario = controladorRegistro::ctrselecionarRegistro(null,null);
+  //echo'<pre>'; print_r($usuario); echo '</pre>'
 ?>
 
 <div class="row">
