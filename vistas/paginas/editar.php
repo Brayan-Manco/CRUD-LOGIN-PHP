@@ -25,7 +25,7 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
                 <button type="submit" class="btn">Actualizar</button>
                 <br>
                 <?php 
-                    $editar = controladorRegistro::ctrEditarRegistro();
+                    /*$editar = controladorRegistro::ctrEditarRegistro();
 
                     if($editar=="ok"){
                         echo '<script>
@@ -39,7 +39,7 @@ $usuario = controladorRegistro::ctrselecionarRegistro();
 
                         echo '<div class="alert alert-success"> El usuario ha sido agregado </div>';
                     }
-                ?>
+                */?>
             </form>
         </div>
     </div>

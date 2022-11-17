@@ -19,7 +19,32 @@ class ModeloFormulario{
         $stmt =null; 
     }
 
-    static public function mdlBorrarRegistro ($tabla, $id){
+    static public function mdlMostrarRegistro ($tabla, $item, $valor) 
+    {       
+
+        if ($item== null && $valor ==null){
+
+            $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+            $stmt->execute();
+    
+            return $stmt ->fetchAll();
+        }
+        else 
+        {
+            $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+            $stmt->bindParam(":".$item, $valor, PDO::PARAM_STR);
+            $stmt->execute();
+    
+            return $stmt ->fetchAll();
+        }
+        
+        $stmt->close();
+        $stmt = null;
+    }
+
+    /*static public function mdlBorrarRegistro ($tabla, $id){
 
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE  id = $id");
         $stmt->execute();
@@ -44,28 +69,5 @@ class ModeloFormulario{
         $stmt =null; 
         
     }
-    static public function mdlMostrarRegistro ($tabla, $item, $valor) 
-    {       
-
-        if ($item== null && $valor ==null){
-
-            $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla");
-
-            $stmt->execute();
-    
-            return $stmt ->fetchAll();
-        }
-        else 
-        {
-            $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
-
-            $stmt->bindParam(":".$item, $valor, PDO::PARAM_STR);
-            $stmt->execute();
-    
-            return $stmt ->fetchAll();
-        }
-        
-        //$stmt->close();
-        $stmt = null;
-    }
+    */
 }

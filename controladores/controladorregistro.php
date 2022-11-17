@@ -18,15 +18,40 @@ class controladorRegistro{
         }
     }
 
-    static public function ctrselecionarRegistro()
+    static public function ctrselecionarRegistro($item, $valor)
     {
         $tabla = "registros";
 
-        $respuesta = ModeloFormulario::mdlMostrarRegistro($tabla,null, null,null);
+        $respuesta = ModeloFormulario::mdlMostrarRegistro($tabla,$valor,$item);
         return $respuesta;
     }
 
-    static public function ctrEditarRegistro(){
+    public function ctrIngreso(){
+		if(isset($_POST["ICorreo"])){
+			$tabla = "registros";
+			$item = "correo";
+			$valor = $_POST["ICorreo"];
+
+			$respuesta = ModeloFormulario::mdlMostrarRegistro($tabla, $item, $valor);
+			if($respuesta["correo"] == $_POST["ICorreo"] && $respuesta["password"] == $_POST["IPassword"]){
+				$_SESSION["validar_ingreso"] = "ok";
+				echo '<script>
+					if ( window.history.replaceState ) {
+						window.history.replaceState( null, null, window.location.href );
+					}
+					window.location = "index.php?pagina=inicio";
+				</script>';
+			}else{
+				echo '<script>
+					if ( window.history.replaceState ) {
+						window.history.replaceState( null, null, window.location.href );
+					}
+				</script>';
+				echo '<div class="alert alert-danger">Error al ingresar al sistema, el email o la contraseña no coinciden</div>';
+			}		
+		}
+	}
+    /*static public function ctrEditarRegistro(){
         if(isset($_GET["id"]))
         {
             $id=$_GET["id"]; 
@@ -47,45 +72,5 @@ class controladorRegistro{
         $tabla = "registros";
         $id = $_GET["id"];
         $respuesta = ModeloFormulario::mdlBorrarRegistro($tabla,$id);
-	}
-
-    static public function ctrIngreso ()
-    {
-        if(isset($_POST["ICorreo"]))
-        {
-
-            $tabla ="registros";
-            $item = "correo";
-            $valor =$_POST["ICorreo"];
-
-            $respuesta = ModeloFormulario::mdlMostrarRegistro($tabla,$item, $valor);
-
-            if($respuesta ["correo"] == $_POST["ICorreo"] && $respuesta ["password"] == $_POST["IPassword"] )
-            {
-
-                $_SESSION ["validar_ingreso"]= "ok";
-
-                echo '<script>
-                            if (window.history.replaceState) {
-                                window.history.replaceState(null, null, window.location.href);
-                            }
-
-                            window.location="index.php?paginas=inicio";
-                            </script>';
-            }
-            else 
-            {
-                echo '<script>
-
-                        if (window.history.replaceState) {
-
-                            window.history.replaceState(null, null, window.location.href);
-
-                        }
-                        </script>';
-
-                        echo '<div class="alert alert-danger"> El usuario no existe </div>';
-            }
-        }
-    }
+	}*/
 }
